@@ -1,0 +1,69 @@
+3. Import/Export vs. Require/Module.exports
+●	require/module.exports es el sistema de módulos en CommonJS.
+●	import/export es el sistema de módulos estándar de ECMAScript (ES6).
+●	Para usar import/export, debes configurar "type": "module" en el package.json.
+4. Módulo readline
+El módulo readline permite interactuar con el usuario en la consola, permitiendo pedir datos como nombre, edad o cualquier otra entrada.
+Ejercicios
+Ejercicio 1: Configuración de Nodemon y dotenv
+1.	Configuración de un proyecto básico:
+
+○	Crea un proyecto de Node.js con npm init -y.
+○	Instala las dependencias de dotenv y nodemon.
+○	Configura nodemon para que el servidor se reinicie automáticamente al realizar cambios en el archivo index.js.
+2.	Cargar variables de entorno:
+○	Crea un archivo .env en la raíz del proyecto. Agrega las siguientes variables de entorno:
+DB_HOST=localhost
+DB_USER=admin
+DB_PASS=secret
+○	En el archivo index.js, usa dotenv para cargar las variables de entorno y muestra un mensaje en consola con las variables DB_HOST, DB_USER y DB_PASS.
+Ejercicio 2: Migración de require a import/export
+1.	Uso de require:
+
+○	Crea un archivo math.js con una función llamada sumar que reciba dos números y los sume.
+○	En el archivo index.js, importa la función usando require y muestra el resultado de sumar(5, 3).
+2.	Migración a import/export:
+
+○	Cambia tu proyecto para usar módulos ES6.
+○	Reemplaza require por import y module.exports por export en el archivo math.js.
+○	En index.js, usa import para traer la función sumar y muestra el resultado de la suma.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Ejercicio 3: Pedir Datos por Consola con readline
+1.	Solicitar datos al usuario:
+
+○	En el archivo index.js, utiliza el módulo readline para pedir al usuario su nombre.
+○	Muestra un mensaje en consola con el nombre que el usuario introdujo.
+
+import readline from 'readline';
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question('¿Cuál es tu nombre? ', (nombre) => {
+ console.log(`Hola, ${nombre}!`);
+  rl.close();
+});
+
+2.	Usar los datos solicitados:
+
+○	Pide al usuario su edad y muestra un mensaje indicando cuántos años tiene. Usa la entrada para hacer una operación, por ejemplo, calcular el año de nacimiento.
+ const añoNacimiento = new Date().getFullYear() - parseInt(edad);
+
+Ejercicio 4: Pedir Datos por Consola, Guardarlos en un Archivo y Leerlos
+1.	Pedir datos al usuario:
+
+○	Usa el módulo readline para solicitar al usuario su nombre, edad y correo electrónico.
+2.	Guardar los datos en un archivo .txt:
+
+○	Utiliza el módulo fs (File System) para guardar los datos del usuario en un archivo datos_usuario.txt. Los datos deben ser guardados en formato texto, cada uno en una nueva línea.
+3.	Leer el archivo y mostrar los datos:
+
+○	Después de guardar los datos, usa fs.readFile para leer el archivo datos_usuario.txt y mostrar en consola el contenido del archivo.
+
+¿Qué ventajas tiene usar dotenv para manejar configuraciones sensibles en vez de tenerlas directamente en el código?
+¿Por qué es importante utilizar Nodemon durante el desarrollo en proyectos de Node.js?
+¿Qué diferencias encuentras entre el uso de require y import/export? ¿Por qué es preferible utilizar la sintaxis ES6 en proyectos modernos?

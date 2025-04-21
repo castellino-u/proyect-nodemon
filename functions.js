@@ -1,0 +1,1 @@
+const getTitle = () => 'Curso de NODE JS';

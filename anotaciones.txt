@@ -1,0 +1,56 @@
+Concepto en documentación: NodeMon es una herramienta de desarrollo que actúa como un monitor de procesos para aplicaciones Node.js, permitiendo la recarga automática de la aplicación cada vez que se detectan cambios en los archivos del proyecto. Este paquete de terceros se instala comúnmente como una dependencia de desarrollo, lo que significa que su uso está restringido al entorno de desarrollo y no se incluye en la versión de producción de la aplicación.
+
+
+Nodemon es un módulo de terceros que nos sirve  para que el codigo, no lo estemos ejecutando todo el tiempo, que no tengamos que echar a andar el servidor todo el tiempo ante cada cambio, sino que activemos nodemon y que este esté escuchando los cambios en nuestro proyecto y lo corra automaticamente al servidor y al código en sí. Esto es útil porque nos facilita y automatiza el desarrollo de la app, ya que no vamos a estar gastando mucho tiempo ejecutando el código o el servidor, una y otra vez. 
+
+Podemos instalar modulos y paquetes externos como devDependencies para que nos ayuden en el desarrollo de la app y a la vez, haciendo que estas no pertenezcan a las dependencias del proyecto, es decir que no pasen a la etapa de producción. Para eso sirven las devDependencies.
+
+Para poder instalar nodemon, usamos el comando{ npm install --save-dev nodemon} esto va a hacer que se instalen solamente en las dependencias de desarrollo, las devDependencies, para que luego no pasen a la fase de producción. 
+
+No es necesario instalarlo globalmente, y tampoco es recomendable instalarlo como dependencias, para que no pasen a la fase de producción. 
+
+Es necesario agregar en el campo de scripts, en el "package.json" un comando para que lo ejecutemos una vez y que luego estos se quede funcionando automaticamente: "dev": "nodemon src/index.js",
+Este script sería así: "dev" → Es el nombre del script. Puedes llamarlo como quieras (por ejemplo, "start-dev" o "watch"), pero "dev" es común para desarrollo.
+
+"nodemon src/index.js" → Es el comando que se ejecutará cuando corras npm run dev:
+
+nodemon → Es una herramienta que reinicia automáticamente el servidor cuando detecta cambios en el código.
+
+src/index.js → Es la ruta del archivo principal que quieres ejecutar con nodemon. Puede variar según tu estructura de carpetas.
+
+
+🌱 ¿Qué son las variables de entorno?
+Las variables de entorno son valores que se almacenan fuera del código fuente y que pueden usarse dentro de tu aplicación para configurarla según el entorno en el que se ejecuta (por eso se llaman “de entorno”).
+
+🧠 ¿Para qué se usan?
+Se usan para guardar información sensible o configurable, como por ejemplo:
+
+🔐 Contraseñas (DB_PASS)
+
+🗃️ Nombre de usuario de la base de datos (DB_USER)
+
+🌐 Dirección del servidor de base de datos (DB_HOST)
+
+🔑 Tokens de acceso (API keys)
+
+🌎 Entornos de ejecución: development, production, etc.
+
+🛡️ ¿Por qué son útiles?
+Separás la configuración del código fuente.
+
+Protegés información sensible (porque el archivo .env no se sube a GitHub).
+
+Facilitás la portabilidad del proyecto: otro desarrollador puede correrlo con su propia configuración.
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------
+
+    IMPORTACIONES Y EXPORTACIONES 

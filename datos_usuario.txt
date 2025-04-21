@@ -1,0 +1,10 @@
+nombre: juan
+edad: 22
+correo: juan@gmail.comnombre: jose
+edad: 200
+correo: jose@jose.comnombre: pepito
+edad: 11
+correo: pepito@pepito.com
+nombre: pepito
+edad: 11
+correo: pepito@pepito.com
